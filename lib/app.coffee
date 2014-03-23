@@ -3,10 +3,10 @@ express = require 'express'
 app = express()
 
 app.configure ->
-  app.use require('connect-assets')()
-  app.set 'views', __dirname + '/views'
+  app.use express.logger()
+  app.set 'views', 'views'
   app.set 'view engine', 'jade'
-  app.use express.static __dirname + '/public'
+  app.use express.static 'public'
 
 app.get "/", (i,o) ->
   o.render 'index'
