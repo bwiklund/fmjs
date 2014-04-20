@@ -7,11 +7,12 @@ app.configure ->
   app.set 'views', 'views'
   app.set 'view engine', 'jade'
   app.use express.static 'public'
+  app.use '/bower_components', express.static 'bower_components'
 
 app.get "/", (i,o) ->
   o.render 'index'
 
-port = process.argv[2] || 8765
+port = process.env.PORT || 8765
 app.listen port, (err) ->
   if err
     throw err

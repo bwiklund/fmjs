@@ -1,0 +1,1 @@
+web: ./lib/run.sh node index.js
