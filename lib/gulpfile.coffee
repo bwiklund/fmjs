@@ -22,7 +22,7 @@ gulp.task 'js', ->
 gulp.task 'css', ->
   gulp
     .src  paths.sheets
-    .pipe stylus set: ['compress']
+    .pipe stylus set: ['compress'], use: ['nib']
     .pipe gulp.dest paths.dest
 
 gulp.task 'watch', ->
